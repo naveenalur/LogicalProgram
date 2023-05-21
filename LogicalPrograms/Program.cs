@@ -3,6 +3,7 @@ using LogicalPrograms.Algorithm;
 using LogicalPrograms.Arrays;
 using LogicalPrograms.NumaricPrograms;
 using LogicalPrograms.PatternPrograms;
+using LogicalPrograms.Strings;
 using System;
 
 namespace LogicalPrograms
@@ -44,14 +45,23 @@ namespace LogicalPrograms
             //var arraySample = new ArrayExamples(5);
             //arraySample.AcceptInputForSingleDimensionArray();
             //arraySample.PrintArray();
-            ////arraySample.PrintMaximumElementInArray();
+            // arraySample.PrintMaximumElementInArray();
+            // arraySample.RemoveDuplicateUsingSort();
+            //arraySample.BubbleSort();
+            //arraySample.QuickSortAlgo();
+            //arraySample.PrintArray();
             ////var index = arraySample.BinarySearch(5);
             ////if (index != -1) Console.WriteLine($"The element is found at the {index}");
             //// arraySample.DifferenceBetweenTheArray();
             //arraySample.RemovingTheDuplicatesFromArray();
             // FindingPairWithGivenSum.FindTheSumPair(new int[] { 8, 7, 2, 5, 3, 1 }, 10);
             // FindingPairWithGivenSum.FindTheSumPairComplexitynlogn(new int[] { 8, 7, 2, 5, 3, 1 }, 10);
-            FindingPairWithGivenSum.LinearFindSumPair(new int[] { 8, 7, 2, 5, 3, 1 }, 10);
+            // FindingPairWithGivenSum.LinearFindSumPair(new int[] { 8, 7, 2, 5, 3, 1 }, 10);
+            var stringExample = new StringExample("naveen");
+            stringExample.RemovingDuplicatesFromString();
+            stringExample.FrequencyOfACharecter();
+         //   Console.WriteLine(stringExample.OutputString);
+
 
             Console.ReadLine();
 

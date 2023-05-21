@@ -44,7 +44,7 @@ namespace LogicalPrograms.Arrays
                     }
                 }
 
-                Console.WriteLine($"{new string('-', 10)} ");
+                Console.WriteLine($"{new string('-', 10)}\n");
 
                 Console.WriteLine($"Maximum number is {maxNumber}");
             }
@@ -135,6 +135,84 @@ namespace LogicalPrograms.Arrays
                     Console.WriteLine(_intergerArray[i]);
                 }
             }
+        }
+
+        public void RemoveDuplicateUsingSort()
+        {
+            Array.Sort(_intergerArray);
+            PrintArray();
+            if(_intergerArray[0]!=_intergerArray[1])
+            {
+                Console.WriteLine(_intergerArray[0]);
+            }
+                for (int i = 1; i < _intergerArray.Length-1; i++)
+            {
+                if (_intergerArray[i] != _intergerArray[i+1] && _intergerArray[i] != _intergerArray[i - 1])
+                {
+                    Console.WriteLine(_intergerArray[i]);
+                }
+            }
+
+            if(_intergerArray[_intergerArray.Length -2] != _intergerArray[_intergerArray.Length - 1])
+                Console.WriteLine(_intergerArray[_intergerArray.Length - 1]);
+        }
+
+        public void BubbleSort()
+        {
+            for (int i = 0; i < _intergerArray.Length; i++)
+            {
+                for (int j = i+1; j < _intergerArray.Length-1; j++)
+                {
+                    if (_intergerArray[i] > _intergerArray[j]) 
+                    {
+                        int temp = _intergerArray[i];
+                        _intergerArray[i] = _intergerArray[j];
+                        _intergerArray[j] = temp;
+                    }
+
+                }
+            }
+        }
+
+        public void QuickSortAlgo()
+        {
+            int low = 0;
+            int high = _intergerArray.Length-1;
+            QuickSort(_intergerArray,low,high);
+
+        }
+        private void QuickSort(int[] arr,int low,int high)
+        {
+            if (low < high)
+            {
+                int partiTionKey=Partion(arr,low,high);
+                QuickSort(arr,low,partiTionKey-1);
+                QuickSort(arr, partiTionKey+1,high);
+            }
+
+        }
+
+        private int Partion(int[] arr,int low,int high)
+        {
+            int pivot = arr[high];
+            int i = low - 1;
+            for (int j = low; j < high; j++)
+            {
+                if (arr[j] < pivot)
+                {
+                    i++;
+                    Swap(arr,i,j);
+                }
+            }
+            Swap(arr,i+1,high);
+            return i + 1;
+        }
+
+        private void Swap(int[] arr,int i,int j)
+        {
+            int temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
         }
 
     }
